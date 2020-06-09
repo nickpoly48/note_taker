@@ -1,39 +1,38 @@
 # note_taker
 
-https://week11-note-taker.herokuapp.com/notes
+Week 11 Express Homework - Note Taker
 
-## Description
+The note taker is an application which enables users to write, save and delete notes.
 
-Create an application that can be used to write, save, and delete notes. This application will uses express backend and save and retrieve note data from a JSON file.
+              Fix this link below!!!!!!!!!!!!
 
-- The application frontend was created, I built the backend and connected the two.
+Deployed app: https://jennyunchan-notetaker.herokuapp.com/
+(works on localhost:3000 when connected via node but doesn't seem to work when deployed on heroku)
 
-- The following HTML routes are used:
 
-  - GET `/notes` returns the `notes.html` file. ![Screen Shot of /notes path.](./Develop/public/assets/notes.png)
+Homework criteria:
 
-* GET `*` returns the `index.html` file. ![Screen Shot of home page.](./Develop/public/assets/home.png)
+* The following HTML routes should be created:
 
-- The notes are stored in a `db.json` file on the backend. The `fs` module is used to read and write to this file.
+  * GET `/notes` - Should return the `notes.html` file.
 
-* The following API routes were created:
+  * GET `*` - Should return the `index.html` file
 
-  - GET `/api/notes` reads the `db.json` file and return all saved notes as JSON. ![Screen shot of /api/notes (get)](./Develop/public/assets/getapi.png)
+* The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
 
-  - POST `/api/notes` receives a new note to save on the request.body, add it to the `db.json` file, and then return the new note to the client when the save icon is clicked. Here is the screen shot before saving (with the save icon circled): ![Screen shot before saving](./Develop/public/assets/before.png)
+* The following API routes should be created:
 
-And this is the screen shot after it's been saved, with the title circled: ![Screen shot after saving](./Develop/public/assets/after.png)
+  * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
 
-- DELETE `/api/notes/:id` receives a query paramter containing the id of a note to delete when the trash can next to the corresponding title is clicked. The note is deleted from the list and from the `db.json` file.
+  * POST `/api/notes` - Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
 
-## User Story
+  * DELETE `/api/notes/:id` - Should receive a query parameter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+  
 
-AS A user, I want to be able to write and save notes
+Acceptance criteria:
 
-I WANT to be able to delete notes I've written before
+Application should allow users to create and save notes.
 
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
+Application should allow users to view previously saved notes.
 
-## Business Context
-
-For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed.
+Application should allow users to delete previously saved notes.
